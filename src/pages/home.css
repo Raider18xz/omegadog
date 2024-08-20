@@ -1,0 +1,49 @@
+  /* Estilos Generales */
+  .carousel-item img {
+    border-radius: 10px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  /* Flechas del Carrusel */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    background-size: 100%, 100%;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Hace que el área clicable sea más grande */
+  }
+
+  .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D"http://www.w3.org/2000/svg" fill%3D"%23fff" viewBox%3D"0 0 8 8"%3E%3Cpath d%3D"M4.354 7.354a.5.5 0 0 0 0-.708L2.707 5.5H7.5a.5.5 0 0 0 0-1H2.707l1.647-1.646a.5.5 0 1 0-.708-.708l-2.5 2.5a.5.5 0 0 0 0 .708l2.5 2.5a.5.5 0 0 0 .708 0z"%3E%3C/path%3E%3C/svg%3E');
+  }
+
+  .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D"http://www.w3.org/2000/svg" fill%3D"%23fff" viewBox%3D"0 0 8 8"%3E%3Cpath d%3D"M3.646 7.354a.5.5 0 0 1 0-.708L5.293 5.5H.5a.5.5 0 0 1 0-1h4.793L3.646 2.854a.5.5 0 1 1 .708-.708l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708 0z"%3E%3C/path%3E%3C/svg%3E');
+  }
+
+  /* Carrusel de Ofertas de Pelos */
+  #carouselOffers .carousel-item img {
+    width: 100%;
+    height: 400px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionarla */
+  }
+
+  /* Carrusel de Categorías */
+  #carouselCategories .carousel-item img {
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    height: 260px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionarla */
+  }
+
+  /* Asegura que el carrusel ocupe todo el ancho de la pantalla */
+  .carousel {
+    width: 100%;
+    max-width: 100%;
+  }
