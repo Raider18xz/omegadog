@@ -16,8 +16,8 @@ function Login() {
 
     return (
         <div className="login-container">
-            <div className="card p-4 shadow-lg">
-                <h1 className="card-title text-center mb-4">OmegaShop</h1>
+            <div className="card p-4 shadow-lg bg-transparent">
+                <h1 className="card-title text-center text-danger-emphasis mb-4" >OmegaShop</h1>
                 <h2 className="text-center mb-4">Iniciar Sesión</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
@@ -40,7 +40,7 @@ function Login() {
                     </div>
                     <button type="submit" className="btn btn-primary w-100">Iniciar Sesión</button>
                 </form>
-                <div className="mt-3 text-center">
+                <div className="mt-3 text-center text-primary">
                     <p>No tienes cuenta?</p>
                     <button className="btn btn-secondary w-100" onClick={handleRegister}>Regístrate</button>
                 </div>

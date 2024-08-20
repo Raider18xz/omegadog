@@ -24,7 +24,7 @@ function Register() {
 
     return (
         <div className="register-container d-flex justify-content-center align-items-center vh-100">
-            <div className="card p-4 shadow-lg">
+            <div className="card p-4 shadow-lg bg-transparent">
                 <h1 className="card-title text-center mb-4">OmegaShop</h1>
                 <h2 className="text-center mb-4">Registro</h2>
                 <form onSubmit={handleSubmit}>

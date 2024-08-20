@@ -1,4 +1,8 @@
   /* Estilos Generales */
+  .c{
+    background-color: rgb(238, 238, 238);
+    background-size: 100%, 100%;
+  }
   .carousel-item img {
     border-radius: 10px;
     margin: 0 auto;
@@ -46,4 +50,10 @@
   .carousel {
     width: 100%;
     max-width: 100%;
+  }
+  .products{
+    background-color: #e29555;
+  }
+  .m{
+    background-color: #e29555;
   }

@@ -47,16 +47,16 @@ function Home() {
     };
 
     return (
-        <div className="container mt-5">
-            <h1 className="text-center">Bienvenido a OmegaShop</h1>
+        <div className="c mt-5">
+            <h1 className="m text-center">Bienvenido a OmegaShop</h1>
 
             {/* Carrusel de Ofertas de Pelos */}
             <div className="offers-section mt-4 p-4 text-center text-white">
-                <h2>Ofertas de Pelos</h2>
+                <h2 class="text-dark">Ofertas de Pelos</h2>
                 <div id="carouselOffers" className="carousel slide w-100" data-bs-ride="carousel">
-                    <div className="carousel-inner">
+                    <div className="carousel-inner border border-dark border-2 rounded-3">
                         <div className="carousel-item active">
-                            <img src="https://exiagricola.net/tienda/wp-content/uploads/2019/07/Banner-Descuentos.png" className="d-block w-100" alt=" " />
+                            <img src="https://exiagricola.net/tienda/wp-content/uploads/2019/07/Banner-Descuentos.png" className="d-block w-100 " alt=" " />
                             <div className="carousel-caption d-none d-md-block">
                           
                             </div>
@@ -92,16 +92,16 @@ function Home() {
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="d-flex justify-content-center">
-                                <img src="https://img.freepik.com/vector-gratis/bolsas-mascotas-set-comida_24877-51205.jpg" className="d-block w-25" alt="Comida" onClick={() => handleCategoryClick("Comida")} />
-                                <img src="https://i.pinimg.com/564x/db/a3/33/dba3331b5476d6f73a9d786428edf245.jpg" className="d-block w-25" alt="Juguetes" onClick={() => handleCategoryClick("Juguetes")} />
-                                <img src="https://st2.depositphotos.com/19232680/46594/v/450/depositphotos_465941462-stock-illustration-sweater-dog-clothes-icon-cartoon.jpg" className="d-block w-25" alt="Ropa" onClick={() => handleCategoryClick("Ropa")} />
+                                <img src="https://img.freepik.com/vector-gratis/bolsas-mascotas-set-comida_24877-51205.jpg" className="d-block w-25 border border-dark border-2" alt="Comida" onClick={() => handleCategoryClick("Comida")} />
+                                <img src="https://i.pinimg.com/564x/db/a3/33/dba3331b5476d6f73a9d786428edf245.jpg" className="d-block w-25 border border-dark border-2" alt="Juguetes" onClick={() => handleCategoryClick("Juguetes")} />
+                                <img src="https://st2.depositphotos.com/19232680/46594/v/450/depositphotos_465941462-stock-illustration-sweater-dog-clothes-icon-cartoon.jpg" className="d-block w-25 border border-dark border-2" alt="Ropa" onClick={() => handleCategoryClick("Ropa")} />
                             </div>
                         </div>
                         <div className="carousel-item">
                             <div className="d-flex justify-content-center">
-                                <img src="https://i.pinimg.com/736x/60/32/9d/60329de760872f42320cf1969f887cea.jpg" className="d-block w-25" alt="Salud" onClick={() => handleCategoryClick("Salud")} />
-                                <img src="https://st5.depositphotos.com/35057912/67015/v/450/depositphotos_670157652-stock-illustration-grooming-vector-fill-outline-icon.jpg" className="d-block w-25" alt="Higiene" onClick={() => handleCategoryClick("Higiene")} />
-                                <img src="https://img.freepik.com/vector-gratis/collar-flotante-mascotas-dibujos-animados-vector-icono-ilustracion-animal-objeto-icono-concepto-aislado-premium_138676-4759.jpg" className="d-block w-25" alt="Accesorios" onClick={() => handleCategoryClick("Accesorios")} />
+                                <img src="https://i.pinimg.com/736x/60/32/9d/60329de760872f42320cf1969f887cea.jpg" className="d-block w-25 border border-dark border-2" alt="Salud" onClick={() => handleCategoryClick("Salud")} />
+                                <img src="https://st5.depositphotos.com/35057912/67015/v/450/depositphotos_670157652-stock-illustration-grooming-vector-fill-outline-icon.jpg" className="d-block w-25 border border-dark border-2" alt="Higiene" onClick={() => handleCategoryClick("Higiene")} />
+                                <img src="https://img.freepik.com/vector-gratis/collar-flotante-mascotas-dibujos-animados-vector-icono-ilustracion-animal-objeto-icono-concepto-aislado-premium_138676-4759.jpg" className="d-block w-25 border border-dark border-2" alt="Accesorios" onClick={() => handleCategoryClick("Accesorios")} />
                             </div>
                         </div>
                     </div>
@@ -118,12 +118,12 @@ function Home() {
 
             {/* Sección de productos */}
             <div className="products mt-5">
-                <h2 className="text-center">{selectedCategory ? `Productos en ${selectedCategory}` : "Selecciona una categoría"}</h2>
+                <h2 className="text-center text-white">{selectedCategory ? `Productos en ${selectedCategory}` : "Selecciona una categoría"}</h2>
                 <div className="row">
                     {selectedCategory && categories[selectedCategory].map((product, index) => (
                         <div className="col-md-4" key={index}>
-                            <div className="card mb-4">
-                                <img src={product.image} className="card-img-top" alt={product.name} />
+                            <div className="card mb-4 border border-dark border-2">
+                                <img src={product.image} className="card-img-top " alt={product.name} />
                                 <div className="card-body">
                                     <h5 className="card-title">{product.name}</h5>
                                 </div>
