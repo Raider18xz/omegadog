@@ -54,6 +54,8 @@
   .products{
     background-color: #e29555;
   }
-  .m{
-    background-color: #e29555;
+  .a{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
