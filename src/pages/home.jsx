@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import './home.css';
 import { MdOutlinePets } from "react-icons/md";
 import { FaCartArrowDown } from "react-icons/fa";
+import { Modal, Button } from 'react-bootstrap';
+
 function Home() {
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [show, setShow] = useState(false);
 
     const categories = {
         "Comida": [
@@ -47,29 +50,53 @@ function Home() {
         setSelectedCategory(category);
     };
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <><nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+        <>   
+         <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <div className="container-fluid">
             <a className="navbar-brand" href="#">OmegaShop</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
+                <span className="navbar-toggler-icon" />
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href={'/login'}>Inicio Sesion</a>
-                </li>
-                <li className="nav-item">
-                <a className="nav-link" href="#">Registro</a>
-                </li>
-                
-            </ul>
-            <span className="navbar-text">
-            <FaCartArrowDown size={80}/>           
-             </span>
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                        <a className="nav-link active" aria-current="page" href={'/login'}>Inicio Sesión</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Registro</a>
+                    </li>
+                </ul>
+                <span className="navbar-text" onClick={handleShow}>
+                    <FaCartArrowDown size={50} />
+                </span>
             </div>
         </div>
-        </nav>
+    </nav>
+
+    {/* Modal para iniciar sesión o registrarse */}
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>Iniciar Sesión o Registrarse</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            Para continuar, por favor inicia sesión o regístrate.
+        </Modal.Body>
+        <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+                Cancelar
+            </Button>
+            <Button variant="primary" onClick={() => {
+                window.location.href = '/login'; // Redirigir a la página de inicio de sesión
+            }}>
+                Iniciar/Registrarse
+            </Button>
+        </Modal.Footer>
+    </Modal>
+   
         <div className="c mt-5">
                 <h1 className=" text-center"><MdOutlinePets />Bienvenido a OmegaShop<MdOutlinePets /></h1>
 
@@ -79,6 +106,7 @@ function Home() {
                     <div id="carouselOffers" className="carousel slide w-100" data-bs-ride="carousel">
                         <div className="carousel-inner border border-dark border-2 rounded-3">
                             <div className="carousel-item active">
+                                
                                 <img src="https://exiagricola.net/tienda/wp-content/uploads/2019/07/Banner-Descuentos.png" className="d-block w-100 " alt=" " />
                                 <div className="carousel-caption d-none d-md-block">
 
@@ -115,16 +143,34 @@ function Home() {
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                                 <div className="d-flex justify-content-center">
-                                    <img src="https://img.freepik.com/vector-gratis/bolsas-mascotas-set-comida_24877-51205.jpg" className="d-block w-25 border border-dark border-2" alt="Comida" onClick={() => handleCategoryClick("Comida")} />
-                                    <img src="https://i.pinimg.com/564x/db/a3/33/dba3331b5476d6f73a9d786428edf245.jpg" className="d-block w-25 border border-dark border-2" alt="Juguetes" onClick={() => handleCategoryClick("Juguetes")} />
-                                    <img src="https://st2.depositphotos.com/19232680/46594/v/450/depositphotos_465941462-stock-illustration-sweater-dog-clothes-icon-cartoon.jpg" className="d-block w-25 border border-dark border-2" alt="Ropa" onClick={() => handleCategoryClick("Ropa")} />
+                                    <div className="text-center mx-2">
+                                        <img src="https://img.freepik.com/vector-gratis/bolsas-mascotas-set-comida_24877-51205.jpg" className="d-block w-100 border border-dark border-2" alt="Comida" onClick={() => handleCategoryClick("Comida")} />
+                                        <p>Comida</p>
+                                    </div>
+                                    <div className="text-center mx-2">
+                                        <img src="https://i.pinimg.com/564x/db/a3/33/dba3331b5476d6f73a9d786428edf245.jpg" className="d-block w-100 border border-dark border-2" alt="Juguetes" onClick={() => handleCategoryClick("Juguetes")} />
+                                        <p>Juguetes</p>
+                                    </div>
+                                    <div className="text-center mx-2">
+                                        <img src="https://st2.depositphotos.com/19232680/46594/v/450/depositphotos_465941462-stock-illustration-sweater-dog-clothes-icon-cartoon.jpg" className="d-block w-100 border border-dark border-2" alt="Ropa" onClick={() => handleCategoryClick("Ropa")} />
+                                        <p>Ropa</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="carousel-item">
                                 <div className="d-flex justify-content-center">
-                                    <img src="https://i.pinimg.com/736x/60/32/9d/60329de760872f42320cf1969f887cea.jpg" className="d-block w-25 border border-dark border-2" alt="Salud" onClick={() => handleCategoryClick("Salud")} />
-                                    <img src="https://st5.depositphotos.com/35057912/67015/v/450/depositphotos_670157652-stock-illustration-grooming-vector-fill-outline-icon.jpg" className="d-block w-25 border border-dark border-2" alt="Higiene" onClick={() => handleCategoryClick("Higiene")} />
-                                    <img src="https://img.freepik.com/vector-gratis/collar-flotante-mascotas-dibujos-animados-vector-icono-ilustracion-animal-objeto-icono-concepto-aislado-premium_138676-4759.jpg" className="d-block w-25 border border-dark border-2" alt="Accesorios" onClick={() => handleCategoryClick("Accesorios")} />
+                                    <div className="text-center mx-2">
+                                        <img src="https://i.pinimg.com/736x/60/32/9d/60329de760872f42320cf1969f887cea.jpg" className="d-block w-100 border border-dark border-2" alt="Salud" onClick={() => handleCategoryClick("Salud")} />
+                                        <p>Salud</p>
+                                    </div>
+                                    <div className="text-center mx-2">
+                                        <img src="https://st5.depositphotos.com/35057912/67015/v/450/depositphotos_670157652-stock-illustration-grooming-vector-fill-outline-icon.jpg" className="d-block w-100 border border-dark border-2" alt="Higiene" onClick={() => handleCategoryClick("Higiene")} />
+                                        <p>Higiene</p>
+                                    </div>
+                                    <div className="text-center mx-2">
+                                        <img src="https://img.freepik.com/vector-gratis/collar-flotante-mascotas-dibujos-animados-vector-icono-ilustracion-animal-objeto-icono-concepto-aislado-premium_138676-4759.jpg" className="d-block w-100 border border-dark border-2" alt="Accesorios" onClick={() => handleCategoryClick("Accesorios")} />
+                                        <p>Accesorios</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -138,6 +184,7 @@ function Home() {
                         </button>
                     </div>
                 </div>
+
 
                 {/* Sección de productos */}
                 <div className="products mt-5">
