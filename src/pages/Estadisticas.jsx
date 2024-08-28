@@ -95,7 +95,7 @@ function Estadisticas() {
                         <h4>Ganancias</h4>
                         <p>$24,000</p>
                     </div>
-                    <div className="pie-chart mt-5" style={{ height: '300px', position: 'relative' }}>
+                    <div className="pie-chart mt-5" style={{ height: '400px', position: 'relative' }}>
                         <h4 className="text-center">Productos Más Vendidos</h4>
                         <Pie data={data} options={options} />
                         <div className="text-center mt-3">

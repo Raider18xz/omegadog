@@ -12,7 +12,7 @@ function Register() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (role === 'admin') {
-            navigate('/admin-home'); // Redirige al home de admin
+            navigate('/homeTienda'); //T ReTidirige al home de admin
         } else {
             navigate('/home'); // Redirige al home de cliente
         }
@@ -73,7 +73,7 @@ function Register() {
                             onChange={(e) => setRole(e.target.value)}
                         >
                             <option value="cliente">Cliente</option>
-                            <option value="admin">Administrador</option>
+                            <option value="admin">Tienda</option>
                         </select>
                     </div>
                     <button type="submit" className="btn btn-primary w-100">Registrarse</button>

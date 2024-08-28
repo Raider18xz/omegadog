@@ -23,11 +23,9 @@ function Home() {
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                              
                                 <li className="nav-item">
                                     <a className="nav-link" href="#" onClick={() => handleNavigation('/resumenv')}>Resumen de Ventas</a>
                                 </li>
-                    
                                 <li className="nav-item">
                                     <a className="nav-link" href="#" onClick={() => handleNavigation('/estadisticas')}>Estadísticas</a>
                                 </li>
@@ -37,9 +35,7 @@ function Home() {
                                 <li className="nav-item">
                                     <a className="nav-link" href="#" onClick={() => handleNavigation('/crearproductos')}>Crear Productos</a>
                                 </li>
-                              
                             </ul>
-                         
                         </div>
                     </div>
                 </div>
@@ -47,6 +43,9 @@ function Home() {
             <div className="container mt-5 pt-5">
                 <h1 className="text-center mb-4">Bienvenido a OmegaShop</h1>
                 <p className="text-center">Seleccione lo que quiere hacer usando el menú.</p>
+                <div className="text-center mt-4">
+                    <img src="https://i.pinimg.com/originals/15/c1/44/15c144e8dc552a100b3292d268854499.gif" alt="Gif ilustrativo" style={{ width: '100%', maxWidth: '400px', height: 'auto' }} />
+                </div>
             </div>
         </>
     );

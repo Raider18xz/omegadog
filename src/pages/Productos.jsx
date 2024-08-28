@@ -5,23 +5,20 @@ function ListadoDeProductos() {
     const navigate = useNavigate();
 
     const productos = [
-        { id: 1, nombre: 'Juguete para Perro', precio: '$10000', categoria: 'Juguetes' },
-        { id: 2, nombre: 'Comida para Gato', precio: '$2500', categoria: 'Comida' },
-        { id: 3, nombre: 'Collar para Perro', precio: '$1500', categoria: 'Accesorios' },
+        { id: 1, nombre: 'Juguete para Perro', precio: '$10000', categoria: 'Juguetes', activo: true },
+        { id: 2, nombre: 'Comida para Gato', precio: '$2500', categoria: 'Comida', activo: false },
+        { id: 3, nombre: 'Collar para Perro', precio: '$1500', categoria: 'Accesorios', activo: true },
     ];
 
     const handleEdit = (id) => {
-        // Redirige a la página de edición del producto
         navigate(`/editarproducto/${id}`);
     };
 
     const handleDelete = (id) => {
-        // Lógica para eliminar el producto
         console.log(`Eliminar producto con ID: ${id}`);
     };
 
     const handleAddProduct = () => {
-        // Redirige a la página de crear producto
         navigate('/crearproductos');
     };
 
@@ -70,6 +67,7 @@ function ListadoDeProductos() {
                             <th>Nombre</th>
                             <th>Precio</th>
                             <th>Categoría</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -80,9 +78,9 @@ function ListadoDeProductos() {
                                 <td>{producto.nombre}</td>
                                 <td>{producto.precio}</td>
                                 <td>{producto.categoria}</td>
+                                <td>{producto.activo ? 'Activo' : 'Inactivo'}</td>
                                 <td>
                                     <button className="btn btn-warning me-2" onClick={() => handleEdit(producto.id)}>Editar</button>
-                                    <button className="btn btn-danger" onClick={() => handleDelete(producto.id)}>Eliminar</button>
                                 </td>
                             </tr>
                         ))}
